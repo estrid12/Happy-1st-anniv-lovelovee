@@ -14,11 +14,21 @@ const CONFIG = {
   kahit ganon AHAHAHAHAH 
   
   so far anng wish ko palang is umabot sa super daming anniv tong relasyon natin and sana SANA lang talaga dika mapagod saken love sana di dumating yung time na mapagod kang mhalin ako,
-  sana dumating yung time na pag gising mo bigla mo nalang marrealized na wala na yung lovee mo for me. we both know how much i loved you and how mucuh i've treasure this relationship we have
+  sana wag dumating yung time na pag gising mo bigla mo nalang marrealized na wala na yung lovee mo for me. we both know how much i loved you and how mucuh i've treasure this relationship we have
   ikaw nalang meron ako na alam kong matatawag kong akin e.
   
   sana pag away, away lang love ha wag moko iiwan. sana pag galit ka, galit lang walang iwanan ha. and sana, sana di pumasok sa isip mo na lokohin at iwan ako love kasi kawawa naman ako AHAHAHAHAHA.
-  kissing asside yun sana nga wag love kasi diko kaya. hindi lang dahil nasanay nako sa presensya mo, kundi dahil mahal kita and someday i want to marry you na.I LOVE YOU SOOOOO MUCH LOVE LOVE KO MORE ANNIIV TO COME PO  `,
+  kidding asside yun sana nga wag love kasi diko kaya. hindi lang dahil nasanay nako sa presensya mo, kundi dahil mahal kita and someday i want to marry you na.
+  
+  alam mo bang im soscared kada mag aaway tayo kasi baka mamaya pumasok sa isip mo na iwan ako tapos wala na ayun na diko kaya lovelove promise 
+  super. nga pala please habaan mopa yung patience mo sakin love matalak lang ako kasi nasasaktan ako minsan pero alam mo namang love na love kita diba more than anything in this world lovelove
+  
+  nga pala thankyou so much love, thankyou sa pag tanggap sakin ng buo, thankyou sa pag mamahal at pag paparamdam sakin na mahalaga ako, things might have been change as time goes by but this love we have sana di magbago
+  sana yung vaare and love mo for me never fades away kawawa naman ako diba. 
+  
+  last na promise. lovee gusto ko lang malaman mo na andito ko palagi for you hanggat kaya ko ibibigay ko lahat ng deserve mo at lahat ng kaya ko ibigay para lang mapasaya ka, andito lang ako lagi para samahan at supportahan ka sa mga balak mo sa buhay
+  sa mga problema mo dika nag iisa meron kang ako lagi. tumalikod man ang mundo sayo meron kang ako na lagi nandyan for you, always remember na andito lang ako through up's and down's lovelove ko mamahalin ka at pipiliin ka kahit sa mga pinaka magulong sitwasyon 
+  mahal na mahal kita lovelove ko I LOVE YOU SOOOOO MUCH MORE ANNIIV TO COME PO  `,
 };
 
 // ★ TIMELINE PHOTOS — Add an optional "image" property with your filename to show a real photo.
