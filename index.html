@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAPPY ANNIVERSARRY LOVELOVEE ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- Floating Hearts -->
+<div class="hearts-bg" id="heartsBg"></div>
+
+<!-- Cursor Heart -->
+<div class="cursor-heart" id="cursorHeart">♡</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <button class="active" data-page="page-hero"     onclick="showPage('page-hero', this)">Home</button>
+  <button               data-page="page-timeline"  onclick="showPage('page-timeline', this)">Our Story</button>
+  <button               data-page="page-letter"    onclick="showPage('page-letter', this)">Love Letter</button>
+  <button               data-page="page-gallery"   onclick="showPage('page-gallery', this)">Notes ♡</button>
+  <button               data-page="page-quiz"      onclick="showPage('page-quiz', this)">Quiz</button>
+  <button               data-page="page-surprise"  onclick="showPage('page-surprise', this)">Surprise ♡</button>
+</nav>
+
+<!-- ───── PAGE 1: HERO ───── -->
+<section class="page active" id="page-hero">
+  <div class="hero-bg-decoration"></div>
+
+  <!-- ★ HERO PHOTO — to add your own photo, replace the emoji + label below with:
+       <img src="your-photo.jpg" alt="Us">
+       Make sure your image file is in the same folder as index.html -->
+  <div class="hero-photo-frame">
+    <div class="hero-photo-placeholder" id="heroPhoto">
+      <img src="us.jpg" alt="Us">
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">HAppy anniversarry MyLovee </p>
+    <h1 class="hero-title">You & <em>Me,</em><br>Always</h1>
+    <p class="hero-tagline" id="heroTagline"></p>
+    <div class="countdown-bar" id="countdownBar">
+      <div class="countdown-unit">
+        <span class="countdown-num" id="cdDays">--</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <span class="countdown-divider">·</span>
+      <div class="countdown-unit">
+        <span class="countdown-num" id="cdHours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <span class="countdown-divider">·</span>
+      <div class="countdown-unit">
+        <span class="countdown-num" id="cdMins">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <span class="countdown-divider">·</span>
+      <div class="countdown-unit">
+        <span class="countdown-num" id="cdSecs">--</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+   <p class="countdown-note">together and counting ♡</p>
+  </div>
+</section>
+
+<!-- ───── PAGE 2: TIMELINE ───── -->
+<section class="page" id="page-timeline">
+  <div class="page-scroll">
+    <div class="section-inner">
+      <p class="section-label">Chapter by chapter</p>
+      <h2 class="section-title">Our <em>Story</em></h2>
+      <div class="section-divider"></div>
+      <div class="timeline-wrapper" id="timelineWrapper"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── PAGE 3: LOVE LETTER ───── -->
+<section class="page" id="page-letter">
+  <div class="letter-layout">
+    <div class="letter-center">
+      <p class="section-label" style="text-align:center">Written with love</p>
+      <h2 class="section-title" style="text-align:center">A Letter <em>for You</em></h2>
+      <div class="section-divider center"></div>
+
+      <!-- ENVELOPE -->
+      <div class="envelope-scene" id="envelopeScene">
+        <div class="envelope" id="envelope" onclick="openEnvelope()">
+          <!-- envelope flap -->
+          <div class="env-flap" id="envFlap"></div>
+          <!-- envelope body -->
+          <div class="env-body">
+            <div class="env-heart">♥</div>
+            <p class="env-open-label">Open</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LETTER (hidden until envelope opened) -->
+      <div class="letter-reveal" id="letterReveal">
+        <div class="letter-card">
+          <span class="letter-salutation" id="letterSalutation">My Dearest Love,</span>
+          <p class="letter-text" id="letterText"></p>
+          <div class="letter-closing" id="letterClosing">Forever yours ♡</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── PAGE 4: LOVE NOTES WALL ───── -->
+<section class="page" id="page-gallery">
+  <div class="corkboard-bg">
+    <div class="corkboard-header">
+      <p class="section-label" style="text-align:center;position:relative;z-index:2;">pinned with love</p>
+      <h2 class="section-title" style="text-align:center;position:relative;z-index:2;">Love <em>Notes</em></h2>
+      <div class="section-divider center" style="position:relative;z-index:2;"></div>
+    </div>
+    <div class="notes-wall" id="notesWall"></div>
+    <button class="add-note-btn" onclick="openNoteModal()">+ Pin a new note ♡</button>
+  </div>
+</section>
+
+<!-- ADD NOTE MODAL -->
+<div class="modal-overlay" id="noteModal">
+  <div class="modal-box">
+    <h3>Pin a Love Note</h3>
+    <p>Write something sweet and it'll appear on the wall.</p>
+    <input type="text" id="noteAuthor" placeholder="From… (e.g. "Me" or your name)"
+      style="width:100%;padding:.65rem 1rem;border:1.5px solid var(--gold-light);border-radius:10px;font-family:'Jost',sans-serif;font-size:.9rem;color:var(--text-dark);outline:none;margin-bottom:.8rem;">
+    <textarea id="noteText" placeholder="Write your note here… ♡" style="height:140px;"></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeNoteModal()">Cancel</button>
+      <button class="btn-save" onclick="saveNote()">Pin it ♡</button>
+    </div>
+  </div>
+</div>
+
+<!-- ───── PAGE 5: QUIZ ───── -->
+<section class="page" id="page-quiz">
+  <div class="page-scroll">
+    <div class="section-inner">
+      <p class="section-label" style="text-align:center">Test your love knowledge</p>
+      <h2 class="section-title" style="text-align:center">How Well Do You <em>Know Us?</em></h2>
+      <div class="section-divider center"></div>
+      <div class="quiz-wrapper" id="quizWrapper"></div>
+      <div class="quiz-score-display" id="quizScoreDisplay"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── PAGE 6: SURPRISE ───── -->
+<section class="page" id="page-surprise">
+  <div class="surprise-layout">
+    <div class="surprise-wrapper">
+      <div class="surprise-lock" id="surpriseLock">
+        <div class="lock-icon">🔒</div>
+        <p class="password-hint">Enter our special day to unlock…</p>
+        <p class="password-sub">(Hint: Date na pinaka mahalaga satin)</p>
+        <div class="password-input-row">
+          <input type="text" class="password-input" id="passwordInput" placeholder="our secret word" onkeydown="if(event.key==='Enter')checkPassword()">
+          <button class="password-btn" onclick="checkPassword()">Unlock ♡</button>
+        </div>
+      </div>
+
+      
+
+      <div class="surprise-reveal" id="surpriseReveal">
+        <div class="surprise-envelope">💌</div>
+        <h3 class="surprise-title">I have been planning to tell you something…</h3>
+        <div class="surprise-content" id="surpriseContent">
+          Mas okay kung fiance moko ng ilang years kesa girlfriend lang......
+        </div>
+        <div class="proposal-section" id="proposalSection" style="margin-top:2rem;">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--deep-rose);font-style:italic;margin-bottom:1.5rem;">So… will you marry me? 💍</p>
+  <div style="display:flex;gap:1rem;justify-content:center;" id="proposalBtns">
+    <button onclick="answerProposal(true)" style="padding:.8rem 2.5rem;background:var(--deep-rose);color:white;border:none;border-radius:30px;font-size:1rem;font-family:'Jost',sans-serif;cursor:pointer;letter-spacing:.1em;">Yes! 💍</button>
+    <button onclick="answerProposal(false)" style="padding:.8rem 2.5rem;background:white;color:var(--text-mid);border:1.5px solid var(--gold-light);border-radius:30px;font-size:1rem;font-family:'Jost',sans-serif;cursor:pointer;letter-spacing:.1em;">No 😢</button>
+  </div>
+  <div id="proposalResponse" style="display:none;margin-top:1.5rem;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--deep-rose);font-style:italic;line-height:1.8;"></div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LETTER EDIT MODAL -->
+<div class="modal-overlay" id="letterModal">
+  <div class="modal-box">
+    <h3>Personalise Your Letter</h3>
+    <p>Edit the content below to make it truly yours.</p>
+    <textarea id="letterEditArea" placeholder="Write your heartfelt message here…"></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeLetterModal()">Cancel</button>
+      <button class="btn-save" onclick="saveLetter()">Save Letter ♡</button>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-photo" id="lightboxPhoto">📷</div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
+<!-- MUSIC TOGGLE -->
+<div class="music-toggle playing" id="musicToggle" onclick="toggleMusic()" title="Toggle background music">🎵</div>
+
+<audio id="bgMusic" loop>
+  <source src="Savage Garden - I Knew I Loved You (Acoustic Version).mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
